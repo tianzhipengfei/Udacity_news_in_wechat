@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<scroll-view scroll-x class="news_type_scroll">   
+    <view class="news_type_list" >
+        <view  class = "news_type_text"  wx:for="{{newsTypeList}}" style='color:{{item.color}}' bindtap='selecNewsType' data-ab="{{item.ab}}" data-index="{{item.index}}" data-newsID="{{item.id}}" >
+            {{item.text}}
+        </view>
+    </view>
+</scroll-view>
+<swiper class="top_news_swiper" indicator-dots="true"
+  autoplay="true" interval="5000" duration="800">
+  <block wx:for="{{topNewsList}}">
+    <swiper-item bindtap='clickTopNews' data-id="{{item.id}}">
+        <image class="top_news_image_bg" style="width: 100%; height: 100%" mode="aspectFill"  src="{{item.firstImage}} "> </image>
+        <image class="top_news_image" style="width: 90%; height: 90%" mode="aspectFill"  src="{{item.firstImage}} "></image>
+        <view class="top_news_title_bg"></view> 
+        <view class="top_news_title"> {{item.title}} </view> 
+        <view class="top_news_time"> {{item.date}} </view> 
+    </swiper-item>
+  </block>
+</swiper>
+<view class="normal_news"  bindtap='clickNormalNews' data-id="{{item.id}}" wx:for="{{normalNewsList}}">
+    <view class="normal_news_title">{{item.title}}</view>
+    <image class="normal_news_iamge" mode="aspectFill" src="{{item.firstImage}}"> </image>
+    <view class="normal_news_time"> {{item.date}} </view> 
+</view>

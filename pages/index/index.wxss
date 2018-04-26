@@ -1,0 +1,132 @@
+/**index.wxss**/
+.news_type_scroll{
+    background-image: linear-gradient(to right, #3E99D5 0%, #3E9BD6 100%);
+    position: fixed;
+    z-index:100;
+}
+
+.news_type_list{
+    padding-left: 25rpx;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    height: 50rpx;
+}
+
+.news_type_text{
+    font-size: 30rpx;
+    line-height: 42rpx;
+    opacity: 0.8;
+    width: 120rpx;
+    flex-shrink: 0;
+    text-align: center;
+    color: #e2d1c3;
+}
+
+
+.top_news_swiper{
+    height: 400rpx;
+    position: relative;
+    top: 50rpx;
+}
+
+.top_news_item{
+    width: 100%;
+    height: 400rpx;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.top_news_image_bg{
+    opacity: 0.1;
+    width:100%; 
+    height: 400rpx;
+    overflow:hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.top_news_title_bg{
+    width:676rpx;
+    height: 84rpx;
+    opacity:0.7;
+    background-color: #bac8e0;
+    margin-left: 32.5rpx;
+    border-radius: 4rpx;
+    top: -582rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.top_news_image{
+    position: relative;
+    top:-415rpx;
+    left: 32.5rpx; 
+    opacity:1;
+    z-index: 1;
+}
+
+.top_news_title{
+    font: "黑体";
+    color: white;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: left;
+    margin-left: 52rpx;
+    margin-right: 52rpx;
+    top: -664rpx;
+    z-index: 3;
+    position: relative;
+}
+
+.top_news_time{
+    font: "黑体";
+    color: grey;
+    font-size: 28rpx;
+    line-height: 39.2rpx;
+    opacity:0.7;
+    display: inline; 
+    text-align: left;
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+    padding-top:8rpx;
+    padding-bottom:8rpx;
+    background-color: #bac8e0; 
+    top: 302rpx;
+    left: 32rpx;
+    position: absolute;
+    z-index: 2;
+}
+
+.normal_news{
+    width: 710rpx;
+    height: 223rpx;
+    margin: 20rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    top: 50rpx;
+    position: relative;
+}
+.normal_news_title{
+    width: 380rpx;
+    height: 89.6rpx;
+    font: "黑体";
+    font-size: 32rpx;
+    line-height: 44.8rpx;
+}
+.normal_news_iamge{
+    width: 308rpx;
+    height: 200rpx;
+    left: 400rpx;
+    top: -89.6rpx;
+    position: relative;
+}
+.normal_news_time{
+    width: 400rpx;
+    font: "黑体";
+    color: gray;
+    font-size: 25rpx;
+    line-height: 35rpx;
+    position: relative;
+    top: -150rpx;
+}
