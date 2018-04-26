@@ -1,0 +1,14 @@
+<!--pages/detail/detail.wxml-->
+<view class="header">
+    <view class="title">{{title}}</view>
+    <view class="date">{{date}}</view>
+    <view class="count">阅读 {{countNum}}</view>
+</view>
+<view class="content">
+    <view  class="content_item" wx:for="{{contentList}}">
+        <text wx:if="{{item.type == 'p'}}" class="content_p" decode="{{true}}" >&nbsp;&nbsp;&nbsp;&nbsp;{{item.text}}</text>
+        <image wx:elif="{{item.type == 'image'}}" class="content_image" mode="aspectFit" src="{{item.src}}"></image>
+        <text wx:if="{{item.type == 'strong'}}" class="content_strong" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.text}}</text>
+
+    </view>
+</view>

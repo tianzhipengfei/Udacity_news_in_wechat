@@ -1,0 +1,53 @@
+/* pages/detail/detail.wxss */
+.header{
+    width: 90%;
+    height: 250rpx;
+    margin: 40rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.title{
+    width: 100%;
+    font-size: 44rpx;
+    line-height: 61.6rpx;
+}
+.date{
+    color: #A1A1A4;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    position: absolute;
+    top: 200rpx;
+    left: 40rpx;
+}
+.count{
+    color: #A1A1A4;
+    font-size: 30rpx;
+    line-height: 42rpx; 
+    position: absolute;
+    top: 200rpx;
+    right: 80rpx;
+}
+.content{
+    width: 90%;
+    height: 100%;
+    margin: 40rpx;
+}
+.content_item{
+    margin-bottom: 10rpx;
+}
+.content_p{
+    width: 100%;
+    font-size: 32rpx;
+    line-height: 50.4rpx;
+}
+.content_image{
+    height: 400rpx;
+    align-items: center;
+    clear: both; 
+    display: block; 
+    margin:auto; 
+}
+.content_strong{
+    width: 100%;
+    font-size: 44rpx;
+    line-height: 61.6rpx;
+}

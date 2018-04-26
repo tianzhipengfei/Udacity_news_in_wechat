@@ -1,6 +1,4 @@
 {
     "navigationBarBackgroundColor": "#429AD9",
-    "navigationBarTitleText": "瞅瞅",
-    "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
 }

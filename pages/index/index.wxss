@@ -73,7 +73,6 @@
 }
 
 .top_news_title{
-    font: "黑体";
     color: white;
     font-size: 30rpx;
     line-height: 42rpx;
@@ -86,7 +85,6 @@
 }
 
 .top_news_time{
-    font: "黑体";
     color: grey;
     font-size: 28rpx;
     line-height: 39.2rpx;
@@ -115,7 +113,6 @@
 .normal_news_title{
     width: 380rpx;
     height: 89.6rpx;
-    font: "黑体";
     font-size: 32rpx;
     line-height: 44.8rpx;
 }
@@ -128,7 +125,6 @@
 }
 .normal_news_time{
     width: 400rpx;
-    font: "黑体";
     color: gray;
     font-size: 25rpx;
     line-height: 35rpx;
