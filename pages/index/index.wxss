@@ -23,6 +23,11 @@
     color: #e2d1c3;
 }
 
+.news_wrapper{
+    top:50rpx;
+    position: relative;
+    height: 100%;
+}
 
 .top_news_swiper{
     height: 400rpx;

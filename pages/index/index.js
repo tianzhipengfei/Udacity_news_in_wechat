@@ -2,6 +2,11 @@
 let SELECTTYPECOLOR = "#fdfcfb";
 let UNSELECTTYPECOLOR = "#e2d1c3";
 
+var touchDirection = 0;
+var touchDot = 0;//触摸时的原点
+var time = 0;// 时间记录，用于滑动时且时间小于1s则执行左右滑动
+var interval = "";// 记录/清理时间记录
+
 Page({
     data:{
         newsTypeList: [
@@ -15,12 +20,18 @@ Page({
             ],
         topNewsList: [],
         normalNewsList: [],
-        selectNewsType: "gn"
+        selectedNewsType: "gn"
     },
     onLoad(){
         this.getLatestNews();
     },
+    onPullDownRefresh(){
+        this.getLatestNews(() => wx.stopPullDownRefresh());
+    },
     selecNewsType(e){
+        if (this.data.selectedNewsType == e.currentTarget.dataset.ab){
+            return ;
+        }
         this.data.newsTypeList.forEach(function(value){
             if (value.ab == e.currentTarget.dataset.ab){
                 value.color = SELECTTYPECOLOR;
@@ -30,7 +41,7 @@ Page({
         });
         this.setData({
             newsTypeList: this.data.newsTypeList,
-            selectNewsType: e.currentTarget.dataset.ab
+            selectedNewsType: e.currentTarget.dataset.ab
         })
         this.getLatestNews();
     },
@@ -40,11 +51,11 @@ Page({
     clickTopNews(e) {
         console.log(e.currentTarget.dataset.id)
     },
-    getLatestNews(){
+    getLatestNews(callback){
         wx.request({
             url: 'https://test-miniprogram.com/api/news/list',
             data: {
-                "type": this.data.selectNewsType
+                "type": this.data.selectedNewsType
             },
             success: res => {
                 let result = res.data.result;
@@ -60,6 +71,9 @@ Page({
                     topNewsList: tempList1,
                     normalNewsList: tempList2
                 })
+            },
+            complete: () => {
+                callback && callback()
             }
         })
     },
@@ -75,5 +89,51 @@ Page({
             }
             result[i].date = result[i].source + "   " + result[i].date.slice(11, 16);
         }
+    },
+    // 触摸开始事件
+    touchStart: function (e) {
+        touchDot = e.touches[0].pageX; // 获取触摸时的原点
+        // 使用js计时器记录时间  
+        interval = setInterval(function () {
+            time++;
+        }, 100);
+    },
+    // 触摸移动事件
+    touchMove: function (e) {
+        var touchMove = e.touches[0].pageX;
+        // 向左滑动  
+        if (touchMove - touchDot <= -180 && time < 100) {
+            touchDirection = 1;
+        }
+        // 向右滑动
+        if (touchMove - touchDot >= 180 && time < 100) {
+            touchDirection = -1;
+        }
+    },
+    // 触摸结束事件
+    touchEnd: function (e) {
+        this.changeNewsType(touchDirection);
+        clearInterval(interval); // 清除setInterval
+        time = 0;
+        touchDirection = 0;
+    },
+    changeNewsType(num){
+        for (var i= 0; i < this.data.newsTypeList.length; i++){
+            if (this.data.newsTypeList[i].ab == this.data.selectedNewsType){
+                if((num == -1 && i == 0) || (num == 1 && i == this.data.newsTypeList.length-1)){
+                    return ;
+                } else{
+                    this.data.newsTypeList[i].color = UNSELECTTYPECOLOR;
+                    this.data.newsTypeList[i+num].color = SELECTTYPECOLOR;
+                    this.data.selectedNewsType = this.data.newsTypeList[i + num].ab;
+                    break;
+                }
+            }
+        }
+        this.setData({
+            newsTypeList: this.data.newsTypeList,
+            selectedNewsType: this.data.selectedNewsType
+        });
+        this.getLatestNews();
     }
 })
