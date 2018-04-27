@@ -112,9 +112,7 @@ Page({
       this.setData({
           generateOk: false
       });
-      console.log(newID);
       newID = parseInt(newID) + num;
-      console.log(newID);
       this.getNews(newID);
       setTimeout(() => {
           this.setData({

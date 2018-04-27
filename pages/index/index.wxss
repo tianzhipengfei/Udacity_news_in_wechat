@@ -25,7 +25,7 @@
     color: #454442;
 }
 .others{
-    position: relative;
+    position: absolute;
     top: 130rrpx;
     left: 0rpx;
     width: 100%;
