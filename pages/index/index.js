@@ -45,13 +45,7 @@ Page({
         })
         this.getLatestNews();
     },
-    clickNormalNews(e) {
-        console.log(e.currentTarget.dataset.id)
-        wx.navigateTo({
-            url: '/pages/detail/detail?newsID=' + e.currentTarget.dataset.id,
-        })
-    },
-    clickTopNews(e) {
+    clickNews(e) {
         console.log(e.currentTarget.dataset.id)
         wx.navigateTo({
             url: '/pages/detail/detail?newsID=' + e.currentTarget.dataset.id,
