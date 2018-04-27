@@ -1,14 +1,34 @@
 <!--pages/detail/detail.wxml-->
-<view class="header">
-    <view class="title">{{title}}</view>
-    <view class="date">{{date}}</view>
-    <view class="count">阅读 {{countNum}}</view>
+<view class="navigationBar">
+    <image class="backLogo" src="/images/arrow_left.png" bindtap='backToHome'></image>
+    <image class="navLogo" src="/images/The_New_York_Times_alt.png"></image>
+    <text class="navText"> 瞅瞅 </text>
 </view>
-<view class="content">
-    <view  class="content_item" wx:for="{{contentList}}">
-        <text wx:if="{{item.type == 'p'}}" class="content_p" decode="{{true}}" >&nbsp;&nbsp;&nbsp;&nbsp;{{item.text}}</text>
-        <image wx:elif="{{item.type == 'image'}}" class="content_image" mode="aspectFit" src="{{item.src}}"></image>
-        <text wx:if="{{item.type == 'strong'}}" class="content_strong" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.text}}</text>
+<view class="others" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <view class='loading' hidden="{{generateOk}}">
+        <view class="sk-cube-grid">
+            <view class="sk-cube sk-cube1"></view>
+            <view class="sk-cube sk-cube2"></view>
+            <view class="sk-cube sk-cube3"></view>
+            <view class="sk-cube sk-cube4"></view>
+            <view class="sk-cube sk-cube5"></view>
+            <view class="sk-cube sk-cube6"></view>
+            <view class="sk-cube sk-cube7"></view>
+            <view class="sk-cube sk-cube8"></view>
+            <view class="sk-cube sk-cube9"></view>
+        </view>
+    </view> 
+    <view class="header">
+        <view class="title">{{title}}</view>
+        <view class="date">{{date}}</view>
+        <view class="count">{{countNum}}</view>
+    </view>
+    <view class="content">
+        <view  class="content_item" wx:for="{{contentList}}">
+            <text wx:if="{{item.type == 'p'}}" class="content_p" decode="{{true}}" >&nbsp;&nbsp;&nbsp;&nbsp;{{item.text}}</text>
+            <image wx:elif="{{item.type == 'image'}}" class="content_image" mode="aspectFit" src="{{item.src}}"></image>
+            <text wx:if="{{item.type == 'strong'}}" class="content_strong" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.text}}</text>
 
+        </view>
     </view>
 </view>

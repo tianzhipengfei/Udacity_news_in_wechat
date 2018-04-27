@@ -1,7 +1,41 @@
 /**index.wxss**/
-.news_type_scroll{
-    background-image: linear-gradient(to right, #3E99D5 0%, #3E9BD6 100%);
+
+.navigationBar{
     position: fixed;
+    top: 0rrpx;
+    left: 0rpx;
+    width: 100%;
+    height:130rpx;
+    background-image: linear-gradient(to left, #434343 0%, black 50%, #434343 100%);
+    z-index: 999;
+}
+.navLogo{
+    width: 50rpx;
+    height: 50rpx;
+    top:60rpx;
+    left:300rpx;
+    position: relative;
+}
+.navText{
+    font-size: 33rpx;
+    line-height: 50rpx;
+    top:50rpx;
+    left:300rpx;
+    position: relative;
+    color: #454442;
+}
+.others{
+    position: relative;
+    top: 130rrpx;
+    left: 0rpx;
+    width: 100%;
+    height:100%;
+}
+.news_type_scroll{
+    background-image: linear-gradient(to left, #434343 0%, black 50%, #434343 100%);
+    background-blend-mode: multiply,multiply;
+    position: fixed;
+    top:130rpx;
     z-index:100;
 }
 
@@ -24,7 +58,7 @@
 }
 
 .news_wrapper{
-    top:50rpx;
+    top:150rpx;
     position: relative;
     height: 100%;
 }

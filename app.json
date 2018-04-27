@@ -5,6 +5,7 @@
     ],
     "window": {
         "navigationBarTitleText": "瞅瞅",
-        "backgroundTextStyle": "dark"
+        "backgroundTextStyle": "dark",
+        "navigationStyle": "custom"
     }
 }
